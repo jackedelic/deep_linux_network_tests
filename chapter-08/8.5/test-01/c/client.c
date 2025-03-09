@@ -31,7 +31,7 @@ int buildConnect(const char *lIp, const char *sIp, int sPort)
     srvAddr.sin_port = htons(sPort); 
     if(connect(skFd, (struct sockaddr *)&srvAddr, sizeof(srvAddr)) < 0)
     {
-       printf("\n Error : Connect Failed \n");
+       perror("\n Error : Connect Failed \n");
        return 0;
     } 
 
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
             return 1;
         }
     }
-    sleep(300);
+    sleep(30);
 
     //3. 释放所有的连接
     printf("关闭所有的连接...\n");
